@@ -4,6 +4,9 @@
 
 class Square:
     """Represent a square."""
+     
+    def __str__(self):
+        self.my_print()
 
     def __init__(self, size=0, position=(0, 0)):
         """Initialize a new square.
