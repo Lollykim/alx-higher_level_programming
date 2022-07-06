@@ -1,11 +1,17 @@
 #!/usr/bin/python3
 """
-This file contains function that appends
-a string at the end of a text file and
-returns number of characters added
+Module 6-from_json_string
+Contains function that returns python data structure from JSON string
 """
 
 
-def append_write(filename="", text=""):
-    with open(filename, mode="a", encoding="utf-8") as myFile:
-        return (myFile.write(str(text)))
+def from_json_string(my_str):
+    """Returns python data structure from JSON string
+    Args:
+        my_str: json string representation
+    Return:
+        python object
+    """
+    import json
+
+    return json.loads(my_str)

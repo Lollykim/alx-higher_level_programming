@@ -1,15 +1,20 @@
 #!/usr/bin/python3
-import json
 """
-This file contains a function that
-writes an obj to a text file using
-JSON rep
+Script that adds all arguments to a Python list, and then saves them to a file
 """
 
+from sys import argv
+save_to_json_file = __import__("5-save_to_json_file").save_to_json_file
+load_from_json_file = __import__("6-load_from_json_file").load_from_json_file
 
-def save_to_json_file(my_obj, filename):
-    """
-    function that writes an obj  to a text file
-    """
-    with open(filename, mode="w") as myFile:
-        json.dump(my_obj, myFile)
+filename = "add_item.json"
+
+try:
+    json_list = load_from_json_file(filename)
+except:
+    json_list = []
+
+for arg in argv[1:]:
+    json_list.append(arg)
+
+save_to_json_file(json_list, filename)

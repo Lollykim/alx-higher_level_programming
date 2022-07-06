@@ -1,14 +1,13 @@
 #!/usr/bin/python3
-"""
-This file defines a function that
-returns the dictionary descp with
-simple data structure for json
-serialization of obj
-"""
+"""Module to serialize class to json"""
 
 
 def class_to_json(obj):
+    """Make serializable copy of `obj` attributes for json
+
+    Args:
+        obj: object to serialize
+
+    Returns: copy of `obj`s attributes as dictionary
     """
-    function that returns dict descp
-    """
-    return (obj.__dict__)
+    return obj.__dict__.copy()
